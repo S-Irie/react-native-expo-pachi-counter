@@ -3,10 +3,10 @@ import { registerRootComponent } from "expo";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 
-import { IconList } from "@/components/icons/IconList";
+import { IconHome } from "@/components/icons/IconHome";
 import { IconSetting } from "@/components/icons/IconSetting";
 import { tabActiveColor, tabInactiveColor } from "@/constants/color";
-import { ListScreen } from "./List";
+import { HomeScreen } from "./Home";
 import { SettingScreen } from "./Setting";
 
 const Tab = createBottomTabNavigator();
@@ -18,12 +18,13 @@ const App = () => {
         screenOptions={{
           tabBarActiveTintColor: tabActiveColor,
           tabBarInactiveTintColor: tabInactiveColor,
+          headerTitleAlign: "center",
         }}
       >
         <Tab.Screen
-          name="一覧"
-          component={ListScreen}
-          options={{ tabBarIcon: ({ color }) => <IconList color={color} /> }}
+          name="ホーム"
+          component={HomeScreen}
+          options={{ tabBarIcon: ({ color }) => <IconHome color={color} /> }}
         />
         <Tab.Screen
           name="設定"

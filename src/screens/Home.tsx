@@ -2,7 +2,7 @@ import { type FC } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 
-export const ListScreen: FC = () => {
+export const HomeScreen: FC = () => {
   return (
     <View style={styles.container}>
       <Text>Open up App.tsx to start working on your app! home</Text>
