@@ -2,6 +2,8 @@ import { type FC } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 export type HomeListCardProps = {
+  // ID
+  id: string;
   // タイトル
   title: string;
   // 総投資額
@@ -38,9 +40,18 @@ const styles = StyleSheet.create({
     width: "100%",
     paddingVertical: 8,
     paddingHorizontal: 12,
+    backgroundColor: "white",
     gap: 8,
-    borderBottomWidth: 1,
-    borderColor: "rgba(51, 51, 51, 0.3)",
+    borderRadius: 8,
+    // shadow（調整したい）
+    shadowColor: "#52006A",
+    shadowOpacity: 0.16,
+    shadowRadius: 8,
+    shadowOffset: {
+      width: 2,
+      height: 8,
+    },
+    elevation: 20,
   },
   subContainer: {
     display: "flex",
