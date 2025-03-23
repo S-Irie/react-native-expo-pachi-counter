@@ -28,7 +28,6 @@ export const HomeListCard: FC<HomeListCardProps> = ({
           <Text style={styles.text}>{`最終更新 : ${lastUpdate}`}</Text>
         </View>
       </View>
-      <View style={styles.frame} />
     </View>
   );
 };
@@ -40,6 +39,8 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     paddingHorizontal: 12,
     gap: 8,
+    borderBottomWidth: 1,
+    borderColor: "rgba(51, 51, 51, 0.3)",
   },
   subContainer: {
     display: "flex",
@@ -58,15 +59,5 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 14,
     color: "rgba(51, 51, 51, 0.5)",
-  },
-  frame: {
-    position: "absolute",
-    borderColor: "rgba(51, 51, 51, 0.3)",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
-    borderTopWidth: 1,
-    borderBottomWidth: 1,
   },
 });
