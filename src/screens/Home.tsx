@@ -1,11 +1,40 @@
-import { type FC } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { useState, type FC } from "react";
+import { StyleSheet, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 
+import {
+  HomeListCard,
+  type HomeListCardProps,
+} from "@/components/cards/HomeListCard";
+
+const MOCK_DATA: HomeListCardProps[] = [
+  {
+    id: "1",
+    title: "タイトル",
+    useAmount: 10000,
+    totalRotation: 100,
+    lastUpdate: "2025-01-01",
+  },
+  {
+    id: "2",
+    title: "タイトル2",
+    useAmount: 20000,
+    totalRotation: 200,
+    lastUpdate: "2025-01-02",
+  },
+];
+
 export const HomeScreen: FC = () => {
+  const [dataList] = useState<HomeListCardProps[]>(MOCK_DATA);
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app! home</Text>
+    <View>
+      <View style={styles.container}>
+        {dataList.map((data) => {
+          return <HomeListCard {...data} key={data.id} />;
+        })}
+      </View>
+
       <StatusBar style="auto" />
     </View>
   );
@@ -13,9 +42,8 @@ export const HomeScreen: FC = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    padding: 16,
+    display: "flex",
+    gap: 12,
   },
 });
